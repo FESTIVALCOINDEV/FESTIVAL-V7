@@ -425,7 +425,7 @@ namespace CryptoNote {
 		std::vector<difficulty_type> cumulativeDifficulties) const {
 
 		if (blockMajorVersion >= BLOCK_MAJOR_VERSION_4) {
-			return nextDifficultyV3(timestamps, cumulativeDifficulties);
+			return nextDifficultyV4(timestamps, cumulativeDifficulties);
 		}
 		else if (blockMajorVersion >= BLOCK_MAJOR_VERSION_3) {
 			return nextDifficultyV3(timestamps, cumulativeDifficulties);
@@ -655,6 +655,9 @@ namespace CryptoNote {
 		next_D = std::max((prev_D * 67) / 100, std::min((prev_D * 67) / 100, (prev_D * 150) / 100));
 		// N = 90 coins change 108 to 106.
 		if (sum_3_ST < (8 * T) / 10) { next_D = std::max(next_D, (prev_D * 108) / 100); }
+
+
+		logger(INFO) << ".......We are on nextDifficultyV4........";
 
 		return static_cast<uint64_t>(next_D);
 
