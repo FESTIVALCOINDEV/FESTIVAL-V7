@@ -704,7 +704,7 @@ namespace CryptoNote {
 			return 0;
 		}
 
-		logger(INFO) << ".......We are on nextDifficultyV4........";
+		//logger(INFO) << ".......We are on nextDifficultyV4........";
 
 		return (low + timeSpan - 1) / timeSpan;
 
