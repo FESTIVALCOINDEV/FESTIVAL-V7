@@ -1957,10 +1957,10 @@ namespace CryptoNote {
 		difficulty_type currentDifficulty = getDifficultyForNextBlock();
 		auto target_calculating_time = std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::steady_clock::now() - targetTimeStart).count();
 
-		if (!(currentDifficulty)) {
+		/*if (!(currentDifficulty)) {
 			logger(ERROR, BRIGHT_RED) << "!!!!!!!!! difficulty overhead !!!!!!!!!";
 			return false;
-		}
+		}*/
 
 
 		auto longhashTimeStart = std::chrono::steady_clock::now();
